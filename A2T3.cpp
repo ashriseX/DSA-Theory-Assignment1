@@ -1,63 +1,56 @@
+//Inventory management system
 #include <iostream>
 using namespace std;
 
 // Item Node
-class Item
-{
-public:
-    string name;
-    Item* next;
+class Item{
+    public:
+        string name;
+        Item* next;
 
-    Item(string n)
-    {
-        name = n;
-        next = NULL;
-    }
+        Item(string n){
+            name = n;
+            next = NULL;
+        }
 };
 
 // Section Node
-class Section
-{
-public:
-    string name;
-    Item* itemHead;
-    Section* next;
+class Section{
+    public:
+        string name;
+        Item* itemHead;
+        Section* next;
 
-    Section(string n)
-    {
-        name = n;
-        itemHead = NULL;
-        next = NULL;
-    }
+        Section(string n){
+            name = n;
+            itemHead = NULL;
+            next = NULL;
+        }
 };
 
 // Store Node
-class Store
-{
-public:
-    string name;
-    Section* sectionHead;
-    Store* next;
+class Store {
+    public:
+        string name;
+        Section* sectionHead;
+        Store* next;
 
-    Store(string n)
-    {
-        name = n;
-        sectionHead = NULL;
-        next = NULL;
-    }
+        Store(string n){
+            name = n;
+            sectionHead = NULL;
+            next = NULL;
+        }
 };
 
-class Inventory
-{
-private:
-    Store* storeHead;
+class Inventory{
+    private:
+        Store* storeHead;
 
-public:
+    public:
 
-    Inventory()
-    {
-        storeHead = NULL;
-    }
+        Inventory(){
+            storeHead = NULL;
+        }
 
     // Add Store
     void addStore(string name)

@@ -1,3 +1,4 @@
+//Songs playlist that allows the user to shuffle back and forthbetween the songs being played
 #include <iostream>
 using namespace std;
 

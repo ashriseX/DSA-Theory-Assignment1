@@ -79,8 +79,7 @@ public:
     }
 
     // Add Task
-    void addTask(string name,int priority,string status)
-    {
+    void addTask(string name,int priority,string status){
         Task* newTask = new Task(name,priority,status);
 
         if(head == NULL)
@@ -89,7 +88,7 @@ public:
             newTask->next = head;
             return;
         }
-
+        else{
         Task* temp = head;
 
         while(temp->next != head)
@@ -97,6 +96,7 @@ public:
 
         temp->next = newTask;
         newTask->next = head;
+        }
     }
 
     // Remove Task
