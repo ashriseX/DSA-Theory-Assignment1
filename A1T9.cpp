@@ -75,7 +75,7 @@ public:
         Book* temp = head;
 
         while(temp != NULL){
-            cout << temp->id << " -> ";
+            cout << temp->id << " --> ";
             temp = temp->next;
         }
 

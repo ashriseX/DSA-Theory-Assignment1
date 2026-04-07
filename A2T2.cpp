@@ -111,10 +111,10 @@ int main()
 {
     Playlist player;
 
-    player.addSong("Shape of You");
-    player.addSong("Blinding Lights");
-    player.addSong("Perfect");
-    player.addSong("Levitating");
+    player.addSong("ye waadiyan");
+    player.addSong("faasle");
+    player.addSong("mein tenu yaad aawan gi");
+    player.addSong("Paar Chanaa de");
 
     cout << "Playlist:\n";
     player.display();

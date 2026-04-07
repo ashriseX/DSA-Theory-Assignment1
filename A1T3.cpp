@@ -76,7 +76,7 @@ public:
         Contact* temp = head;
 
         while(temp != NULL){
-            cout << temp->name << " -> ";
+            cout << temp->name << " --> ";
             temp = temp->next;
         }
 

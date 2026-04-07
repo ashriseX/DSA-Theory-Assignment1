@@ -56,7 +56,7 @@ public:
             cout << temp->name;
 
             if(temp->next != NULL)
-                cout << " <-> ";
+                cout << " <--> ";
 
             temp = temp->next;
         }

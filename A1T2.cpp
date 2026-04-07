@@ -68,7 +68,7 @@ public:
         Song* temp = head;
 
         while(temp != NULL){
-            cout << temp->title << " -> ";
+            cout << temp->title << " --> ";
             temp = temp->next;
         }
 

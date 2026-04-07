@@ -97,7 +97,7 @@ public:
     void display(Node* node){
 
         while(node != NULL){
-            cout << node->price << " -> ";
+            cout << node->price << " --> ";
             node = node->next;
         }
 

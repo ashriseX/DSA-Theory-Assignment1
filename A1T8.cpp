@@ -73,7 +73,7 @@ public:
         Stamp* temp = head;
 
         while(temp != NULL){
-            cout << temp->design << " -> ";
+            cout << temp->design << " --> ";
             temp = temp->next;
         }
 
