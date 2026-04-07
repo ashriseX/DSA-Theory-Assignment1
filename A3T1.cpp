@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-
+//Josephus' problem
+//node class 
 class Node
 {
 public:
@@ -44,14 +45,9 @@ int josephus(int n, int m)
 
     return ptr->data;
 }
+//rest of the question
 
-
-    
-
-
-#include <iostream>
-using namespace std;
-
+//task class
 class Task
 {
 public:
@@ -69,6 +65,7 @@ public:
     }
 };
 
+//class to schedule the tasks objects
 class TaskScheduler
 {
 private:
@@ -209,6 +206,8 @@ public:
     }
 };
 
+
+//main method----------------------------------------------
 int main()
 {
     //josephus problem

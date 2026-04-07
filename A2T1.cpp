@@ -1,94 +1,87 @@
+//Desk rearrangement 
+//first with last and second with the second last till the middle one
 #include <iostream>
 using namespace std;
 
-class Node
-{
-public:
-    string name;
-    Node* next;
-    Node* prev;
+//Node class representing the desks that are to be arranged
+class Node{
+    public:
+        string name;
+        Node* next;
+        Node* prev;
 
-    Node(string n)
-    {
-        name = n;
-        next = NULL;
-        prev = NULL;
-    }
+        Node(string n){
+            name = n;
+            next = NULL;
+            prev = NULL;
+        }
 };
 
-class DoublyList
-{
-private:
-    Node* head;
-    Node* tail;
+//doubly loist class that will actually contain the arrangement of the dsks
+class DoublyList{
+    private:
+        Node* head;
+        Node* tail;
 
-public:
+    public:
 
-    DoublyList()
-    {
-        head = NULL;
-        tail = NULL;
-    }
-
-    // Insert desk
-    void insert(string name)
-    {
-        Node* newNode = new Node(name);
-
-        if(head == NULL)
-        {
-            head = tail = newNode;
-            return;
+        DoublyList(){
+            head = NULL;
+            tail = NULL;
         }
 
-        tail->next = newNode;
-        newNode->prev = tail;
-        tail = newNode;
+    // Insert desk
+    void insert(string name){
+            Node* newNode = new Node(name);
+
+            if(head == NULL){
+                head = tail = newNode;
+                return;
+            }
+
+            tail->next = newNode;
+            newNode->prev = tail;
+            tail = newNode;
     }
 
     // Display desks
-    void display()
-    {
-        Node* temp = head;
+    void display(){
+            Node* temp = head;
 
-        while(temp != NULL)
-        {
-            cout << temp->name;
+            while(temp != NULL){
+                cout << temp->name;
 
-            if(temp->next != NULL)
-                cout << " <--> ";
+                if(temp->next != NULL)
+                    cout << " <=> ";
 
-            temp = temp->next;
-        }
+                temp = temp->next;
+            }
 
-        cout << endl;
+            cout << endl;
     }
 
     // Swap first with last, second with second-last etc
-    void swapEnds()
-{
-    Node* left = head;
-    Node* right = tail;
+    void swapEnds(){
+        Node* left = head;
+        Node* right = tail;
 
-    while(left != right && left->next != right)
-    {
-        // swap names
-        string temp = left->name;
-        left->name = right->name;
-        right->name = temp;
+        while(left != right && left->next != right){
+            // swap names
+            string temp = left->name;
+            left->name = right->name;
+            right->name = temp;
 
-        left = left->next;
-        right = right->prev;
+            left = left->next;
+            right = right->prev;
+        }
+
+        // For even number of nodes, swap the final pair
+        if(left->next == right){
+            string temp = left->name;
+            left->name = right->name;
+            right->name = temp;
+        }
     }
-
-    // For even number of nodes, swap the final pair
-    if(left->next == right)
-    {
-        string temp = left->name;
-        left->name = right->name;
-        right->name = temp;
-    }
-}
 };
 
 int main()

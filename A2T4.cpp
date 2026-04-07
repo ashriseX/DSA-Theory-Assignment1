@@ -1,3 +1,4 @@
+//seating arrangement and the special swap
 #include <iostream>
 using namespace std;
 
@@ -53,7 +54,7 @@ public:
             cout << temp->seat;
 
             if(temp->next != NULL)
-                cout << " -> ";
+                cout << " -- ";
 
             temp = temp->next;
         }
@@ -69,11 +70,13 @@ public:
 
         Node* left = head->next;
         Node* right = tail->prev;
-
+        //alternating boolean values every alternating nodes
+        
         bool swapFlag = true;
 
         while(left != right && left->prev != right)
         {
+            //if the swapFlag is true
             if(swapFlag)
             {
                 int temp = left->seat;

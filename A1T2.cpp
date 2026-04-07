@@ -52,11 +52,11 @@ public:
 
         while(curr != NULL){
 
-            nextNode = curr->next; // save next node
-            curr->next = prev;     // reverse link
+            nextNode = curr->next; 
+            curr->next = prev;     
 
-            prev = curr;           // move prev forward
-            curr = nextNode;       // move curr forward
+            prev = curr;           
+            curr = nextNode;       
         }
 
         head = prev;
@@ -80,7 +80,7 @@ int main(){
 
     Playlist p;
 
-    p.addSong("Song A");
+    p.addSong("Song:A");
     p.addSong("Song B");
     p.addSong("Song C");
     p.addSong("Song D");

@@ -1,3 +1,4 @@
+//singly linked list alternating members swap
 #include <iostream>
 using namespace std;
 
@@ -87,6 +88,18 @@ public:
 
         head = dummy.next;
     }
+    //swapping pairs by data
+    void swapPairsData(){
+        Node* curr = head;
+
+        while(curr != NULL && curr->next != NULL){
+            int temp = curr->data;             
+            curr->data = curr->next->data;      
+            curr->next->data = temp;            
+        
+            curr = curr->next->next;            
+        }
+    }
 };
 
 
@@ -107,7 +120,11 @@ int main()
 
     tasks.swapPairs();
 
-    cout << "After Swapping Pairs:" << endl;
+    cout << "After Swapping Pairs by nodes:" << endl;
+    tasks.display();
+
+    tasks.swapPairsData();
+    cout << "After Swapping Pairs by data:" << endl;
     tasks.display();
 
     return 0;
